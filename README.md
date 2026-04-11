@@ -1,1 +1,1 @@
-# Nh-m-10_-T-i-20_X-y-d-ng-ph-n-m-m-qu-n-l-d-ch-v-ch-y-qu-ng-c-o-tr-n-Internet
+#Nhóm 10 Đề Tài 20: Xây dựng phần mềm quản lý dịch vụ chạy quảng cáo trên mạng internet
