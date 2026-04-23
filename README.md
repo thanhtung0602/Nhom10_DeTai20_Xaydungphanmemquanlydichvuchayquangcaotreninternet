@@ -1,5 +1,6 @@
 #Nhóm 10 Đề Tài 20: Xây dựng phần mềm quản lý dịch vụ chạy quảng cáo trên mạng internet
 
+# Tuần 1
 1. Giới thiệu tổng quan
 Phần mềm quản lý dịch vụ chạy quảng cáo (Ads Management System) là một ứng dụng Desktop được xây dựng bằng Python. Hệ thống giúp các cá nhân, agency hoặc người làm affiliate marketing quản lý tập trung các chiến dịch quảng cáo trên đa nền tảng (Facebook, Google, TikTok), theo dõi tiến độ giải ngân, và xuất báo cáo hiệu suất một cách trực quan.
 
@@ -37,3 +38,45 @@ Danh sách báo cáo: Quản lý các báo cáo đã tạo, hiển thị thông 
 Bộ lọc báo cáo: Tùy chỉnh xem báo cáo theo loại (Performance, Spend, ROI), theo nền tảng, và khoảng thời gian (Date Range).
 Xuất file (Export): Hỗ trợ tải xuống dữ liệu báo cáo dưới định dạng file Excel (.xlsx) hoặc CSV để dễ dàng gửi cho đối tác hoặc lưu trữ.
 <img width="1148" height="720" alt="Phác thảo báo cáo" src="https://github.com/user-attachments/assets/85e5fc08-4aee-4d72-9807-ddd6ba8cc733" />
+
+#Tuần 2
+
+1. Giao diện hệ thống đăng nhập
+   <img width="1620" height="1034" alt="image" src="https://github.com/user-attachments/assets/1dec9a05-0945-457c-acbb-e311ee6de360" />
+2. Giao diện Trang chủ
+   <img width="1616" height="1029" alt="image" src="https://github.com/user-attachments/assets/e53cca81-2e00-4028-9f7b-67b42c03dcba" />
+3. Giao diện quản lý chiến dịch
+   <img width="1614" height="1025" alt="image" src="https://github.com/user-attachments/assets/d0cfe955-0656-4c6a-b428-1d1384775644" />
+4. Giao diện quản lý Khách hàng, đối tác
+   <img width="1622" height="1031" alt="image" src="https://github.com/user-attachments/assets/6d13fb6d-2149-4eff-9920-ade7d579ca3a" />
+5. Giao diện theo dõi hiệu suất
+   <img width="1625" height="1010" alt="image" src="https://github.com/user-attachments/assets/294077e5-8e7d-4430-b735-14d125113719" />
+6. Giao diện báo cáo
+   <img width="1619" height="1009" alt="image" src="https://github.com/user-attachments/assets/00994e4c-cf0f-4041-bd0d-97ca50864f5c" />
+
+#Tuần 3
+
+Để đáp ứng các chức năng trên giao diện, hệ thống sử dụng cơ sở dữ liệu **SQLite** và áp dụng mô hình **Lập trình Hướng đối tượng (OOP)**.
+
+### 3.1. Thiết kế Cơ sở dữ liệu (Database Schema / ERD)
+Cấu trúc được thiết kế mở rộng (SaaS-ready) bao gồm các bảng có liên kết chặt chẽ (Khóa chính - Khóa ngoại):
+- `nguoi_dung`: Quản lý tài khoản và quyền truy cập.
+- `khach_hang` & `hoa_don`: Quản lý thông tin đối tác và dòng tiền.
+- `chien_dich`, `nhom_quang_cao`, `mau_quang_cao`: Bóc tách cấu trúc chiến dịch quảng cáo.
+- `theo_doi_chi_tiet`: Lưu trữ số liệu hiệu suất (Click, Cost, Impression).
+- `nhat_ky_he_thong`: Ghi nhận lịch sử thao tác của người dùng.
+
+<img width="925" height="1355" alt="image" src="https://github.com/user-attachments/assets/e47c6a54-3011-4cb0-8841-04aa041ed461" />
+
+### 3.2. Sơ đồ Lớp (Class Diagram)
+Hệ thống gồm các lớp thực thể chính: `NguoiDung`, `KhachHang`, `ChienDich`, `TheoDoi`, `BaoCao`. 
+Sơ đồ thể hiện rõ các mối quan hệ:
+- **Kết hợp (Aggregation):** Giữa Khách hàng và Chiến dịch.
+- **Cấu thành (Composition):** Giữa Chiến dịch và Theo dõi hiệu suất.
+- **Phụ thuộc (Dependency):** Người dùng thao tác tạo Báo cáo.
+
+<img width="942" height="1352" alt="image" src="https://github.com/user-attachments/assets/36ddcd77-9680-48a7-96b3-1bce04fd7078" />
+
+### 3.3. Cấu trúc mã nguồn hiện tại
+- `app.py`: Đảm nhiệm 100% logic Giao diện (Frontend) bằng PyQt6.
+- `database.py`: Đảm nhiệm tương tác Cơ sở dữ liệu và Business Logic (Backend).
