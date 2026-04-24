@@ -75,7 +75,7 @@ Sơ đồ thể hiện rõ các mối quan hệ:
 - **Cấu thành (Composition):** Giữa Chiến dịch và Theo dõi hiệu suất.
 - **Phụ thuộc (Dependency):** Người dùng thao tác tạo Báo cáo.
 
-<img width="942" height="1352" alt="image" src="https://github.com/user-attachments/assets/36ddcd77-9680-48a7-96b3-1bce04fd7078" />
+<img width="2228" height="4272" alt="image" src="https://github.com/user-attachments/assets/c001062b-f566-4d07-8145-fa7d5c12deee" />
 
 ### 3.3. Cấu trúc mã nguồn hiện tại
 - `app.py`: Đảm nhiệm 100% logic Giao diện (Frontend) bằng PyQt6.
