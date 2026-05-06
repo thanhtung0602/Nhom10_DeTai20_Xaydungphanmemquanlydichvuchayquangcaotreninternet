@@ -66,7 +66,7 @@ Cấu trúc được thiết kế mở rộng (SaaS-ready) bao gồm các bảng
 - `theo_doi_chi_tiet`: Lưu trữ số liệu hiệu suất (Click, Cost, Impression).
 - `nhat_ky_he_thong`: Ghi nhận lịch sử thao tác của người dùng.
 
-<img width="826" height="968" alt="image" src="https://github.com/user-attachments/assets/4b02be6e-60f9-4a27-a275-6a37c4b08682" />
+<img width="659" height="707" alt="image" src="https://github.com/user-attachments/assets/f41001e4-db49-4617-aefe-664ecd9ec770" />
 
 ### 3.2. Sơ đồ Lớp (Class Diagram)
 Hệ thống gồm các lớp thực thể chính: `NguoiDung`, `KhachHang`, `ChienDich`, `TheoDoi`, `BaoCao`. 
